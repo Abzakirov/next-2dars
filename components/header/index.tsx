@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const navItems = ["Music", "File", "Edit", "View", "Account"];
 
@@ -32,33 +31,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Header */}
-        <div className="md:hidden flex h-16 items-center justify-between">
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-md text-gray-700 hover:text-black hover:bg-gray-100"
-          >
-            <MenuIcon open={mobileMenuOpen} />
-          </button>
-          
-          <div className="w-8 h-8 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center">
-            <UserIcon />
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden pb-4 space-y-2">
-            {navItems.map((item) => (
-              <button
-                key={item}
-                className="block w-full text-left px-4 py-2 text-sm font-medium text-gray-700 hover:text-black hover:bg-gray-50 rounded-md transition-colors duration-200"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-        )}
+      
       </div>
     </header>
   );
